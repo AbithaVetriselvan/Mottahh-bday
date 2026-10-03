@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Mottaahhhh ❤️</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+text-align:center;
+overflow-x:hidden;
+}
+
+.page{
+display:none;
+padding:30px;
+min-height:100vh;
+}
+
+.active{
+display:block;
+}
+
+h1{
+color:white;
+font-size:3em;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:#ff4081;
+color:white;
+font-size:18px;
+cursor:pointer;
+margin-top:20px;
+}
+
+input{
+padding:10px;
+font-size:18px;
+border-radius:10px;
+border:none;
+}
+
+.gift{
+display:inline-block;
+font-size:60px;
+margin:15px;
+cursor:pointer;
+transition:.3s;
+}
+
+.gift:hover{
+transform:scale(1.2);
+}
+
+.card{
+background:white;
+padding:15px;
+border-radius:15px;
+margin:10px;
+box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+
+.heart{
+position:fixed;
+color:red;
+font-size:20px;
+animation:float 5s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-100vh);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD PAGE -->
+
+<div class="page active" id="page0">
+<h1>🔐 Secret Entry</h1>
+
+<h2>Only One Special Person Can Enter ❤️</h2>
+
+<input type="password" id="password" placeholder="Enter Password">
+
+<br><br>
+
+<button onclick="checkPassword()">
+Unlock My Heart ❤️
+</button>
+
+<p id="error" style="color:red;"></p>
+</div>
+
+<!-- PAGE 1 -->
+
+<div class="page" id="page1">
+
+<h1>🎂 Happy Birthday</h1>
+
+<h1>Sathishkumar ❤️</h1>
+
+<h2>My Mottaahhhh 💖</h2>
+
+<div style="font-size:100px">🎂</div>
+
+<p>
+Wishing the most special person in my life
+a very Happy Birthday ❤️
+</p>
+
+<button onclick="nextPage(2)">
+Start The Surprise 🎁
+</button>
+
+</div>
+
+<!-- PAGE 2 -->
+
+<div class="page" id="page2">
+
+<h1>🎁 Gifts For Mottaahhhh</h1>
+
+<div class="gift" onclick="gift('🧸 Teddy Bear For You')">🎁</div>
+<div class="gift" onclick="gift('🌹 A Rose Just For You')">🎁</div>
+<div class="gift" onclick="gift('🍫 Sweet Chocolate')">🎁</div>
+<div class="gift" onclick="gift('💍 Forever Ring')">🎁</div>
+<div class="gift" onclick="gift('🤗 Unlimited Hugs')">🎁</div>
+<div class="gift" onclick="gift('😘 Unlimited Kisses')">🎁</div>
+
+<h3 id="giftmsg"></h3>
+
+<p>❤️ You are my favorite notification ❤️</p>
+<p>❤️ Every love story is beautiful, but ours is my favorite ❤️</p>
+<p>❤️ My heart found its home in you ❤️</p>
+
+<button onclick="nextPage(3)">
+Memory Lane 📸
+</button>
+
+</div>
+
+<!-- PAGE 3 -->
+
+<div class="page" id="page3">
+
+<h1>📸 Our Memories</h1>
+
+<div class="card">💌 First Hello</div>
+<div class="card">💌 First Chat</div>
+<div class="card">💌 First Smile</div>
+<div class="card">💌 First Fight</div>
+<div class="card">💌 Best Memory</div>
+<div class="card">💌 Future Dreams Together</div>
+
+<h2>
+Every memory with you became my favorite chapter ❤️
+</h2>
+
+<button onclick="nextPage(4)">
+Open My Heart 💌
+</button>
+
+</div>
+
+<!-- PAGE 4 -->
+
+<div class="page" id="page4">
+
+<h1>💍 Forever & Ever</h1>
+
+<div class="card">
+
+<h2>Happy Birthday Mottaahhhh ❤️</h2>
+
+<p>
+Unna first time paatha naal la irundhu,
+en life konjam konjama colorful aagiduchu...
+</p>
+
+<p>
+Nee siricha enaku happiness...
+Nee silent ah irundha enaku worry...
+</p>
+
+<p>
+Sandai vanthalum,
+distance vanthalum,
+naan choose panrathu unnathan ❤️
+</p>
+
+<p>
+Birthday gift ah illa...
+En heart full ah un kitta kudukuren...
+</p>
+
+<p>
+Indrum...
+Endrum...
+Nee Mattum ❤️
+</p>
+
+<h2>
+I Love You Sathishkumar ❤️
+</h2>
+
+<h3>
+Forever Yours,
+Abimaa 💖
+</h3>
+
+</div>
+
+<button onclick="forever()">
+Will You Stay With Me Forever? 💍
+</button>
+
+<h2 id="finalmsg"></h2>
+
+</div>
+
+<script>
+
+function checkPassword(){
+
+let pass=document.getElementById("password").value;
+
+if(pass==="abimaa"){
+nextPage(1);
+}
+else{
+document.getElementById("error").innerHTML=
+"❌ Wrong Password";
+}
+
+}
+
+function nextPage(num){
+
+document.querySelectorAll(".page")
+.forEach(p=>p.classList.remove("active"));
+
+document.getElementById("page"+num)
+.classList.add("active");
+
+}
+
+function gift(msg){
+document.getElementById("giftmsg").innerHTML=msg;
+}
+
+function forever(){
+
+document.getElementById("finalmsg").innerHTML=
+"❤️ YAYYYY ❤️<br>Forever Starts Here 💍";
+
+for(let i=0;i<100;i++){
+
+let heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+
+heart.className="heart";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=
+(Math.random()*3+2)+"s";
+
+document.body.appendChild(heart);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
